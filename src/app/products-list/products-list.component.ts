@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { productItemModel } from './models/product-list.model';
+import { productItemModel } from './../models/product-list.model';
 
 @Component({
   selector: 'boot-products-list',
@@ -9,6 +9,7 @@ import { productItemModel } from './models/product-list.model';
 })
 export class ProductsListComponent implements OnInit {
   products: productItemModel[] = [];
+  searchQuery: string;
 
   constructor() { }
 
