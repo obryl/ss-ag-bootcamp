@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from '@shared/header/header.module';
 import { ProductsListModule } from './products-list/products-list.module';
+import {MainModule} from "./main/main.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductsListModule } from './products-list/products-list.module';
     AppRoutingModule,
     HeaderModule,
     ProductsListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MainModule
   ],
   providers: [],
   bootstrap: [AppComponent]
