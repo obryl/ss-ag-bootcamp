@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayoutGap="1%"
+     fxLayoutAlign="center center">
+  <div fxFlex="33%"
+       *ngFor="let product of products; trackBy: id">
+    <h2>{{ product.name }}</h2>
+  </div>
+</div>
