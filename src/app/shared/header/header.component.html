@@ -1,1 +1,13 @@
-<mat-toolbar color="accent"></mat-toolbar>
+<mat-toolbar class="toolbar" color="accent">
+  <span class="logo">Ag Bootcamp</span>
+  <div class="menu-items">
+    <button mat-button *ngFor="let item of menuItems" [matMenuTriggerFor]="subItems" (click)="selectItem(item)">
+      {{item.label}}
+    </button>
+    <mat-menu #subItems="matMenu">
+      <button mat-menu-item *ngFor="let item of selectedItem.subItems">
+        {{item.label}}
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
