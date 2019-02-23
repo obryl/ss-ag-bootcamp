@@ -6,25 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  activeView = 'main';
   headerItems = [{
     label: 'Main',
-    routerLink: '',
+    alias: 'main',
     subItems: []
   }, {
     label: 'Products',
-    routerLink: 'products',
+    alias: 'products',
     subItems: [{
-      label: 'Category 2',
-      routerLink: 'products'
+      label: 'All Categories',
+      alias: 'products'
     }, {
-      label: 'Category 3',
-      routerLink: 'products'
+      label: 'BMW',
+      alias: 'products'
     }, {
-      label: 'Category 4',
-      routerLink: 'products'
+      label: 'Mercedes',
+      alias: 'products'
     }, {
-      label: 'Category 5',
-      routerLink: 'products'
+      label: 'Zhyguli',
+      alias: 'products'
+    }, {
+      label: 'Audi',
+      alias: 'products'
+    }, {
+      label: 'Toyota',
+      alias: 'products'
     }]
   }];
+
+  changeView(view): void {
+    this.activeView = view;
+  }
 }

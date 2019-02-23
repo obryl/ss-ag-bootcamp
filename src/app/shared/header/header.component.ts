@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'boot-header',
@@ -7,16 +7,24 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() menuItems: any[];
+  @Output() viewChanged: EventEmitter<string> = new EventEmitter<string>();
 
-  selectedItem: any = {};
+  activeView: string;
+  dropdownItems: any[] = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.activeView = this.menuItems[0].alias;
   }
 
   selectItem(item): void {
-    this.selectedItem = item;
+    if (item.subItems && item.subItems.length) {
+      this.dropdownItems = item.subItems;
+      return;
+    }
+    this.activeView = item.alias;
+    this.viewChanged.emit(this.activeView);
   }
 
 }
