@@ -9,6 +9,7 @@ import { MatMenuModule, MatToolbarModule } from '@angular/material';
     CommonModule,
     MatToolbarModule,
     MatMenuModule
-  ]
+  ],
+  exports: [HeaderComponent]
 })
 export class HeaderModule { }
