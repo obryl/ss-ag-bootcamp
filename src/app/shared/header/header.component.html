@@ -1,7 +1,12 @@
 <mat-toolbar class="toolbar" color="accent">
   <span class="logo">Ag Bootcamp</span>
   <div class="menu-items">
-    <button mat-button *ngFor="let item of menuItems" [matMenuTriggerFor]="subItems" (click)="selectItem(item)">
+    <button mat-button
+            [ngClass]="{'mat-primary': selectedItem.label === item.label}"
+            *ngFor="let item of menuItems"
+            [matMenuTriggerFor]="subItems"
+            (click)="selectItem(item)"
+    >
       {{item.label}}
     </button>
     <mat-menu #subItems="matMenu">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'boot-header',
@@ -6,27 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  menuItems: any[] = [{
-    label: 'Main',
-    routerLink: '',
-    subItems: []
-  }, {
-    label: 'Products',
-    routerLink: 'products',
-    subItems: [{
-      label: 'Category 2',
-      routerLink: 'products'
-    }, {
-      label: 'Category 3',
-      routerLink: 'products'
-    }, {
-      label: 'Category 4',
-      routerLink: 'products'
-    }, {
-      label: 'Category 5',
-      routerLink: 'products'
-    }]
-  }];
+  @Input() menuItems: any[];
 
   selectedItem: any = {};
 

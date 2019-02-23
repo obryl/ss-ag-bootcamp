@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ss-ag-bootcamp';
+  headerItems = [{
+    label: 'Main',
+    routerLink: '',
+    subItems: []
+  }, {
+    label: 'Products',
+    routerLink: 'products',
+    subItems: [{
+      label: 'Category 2',
+      routerLink: 'products'
+    }, {
+      label: 'Category 3',
+      routerLink: 'products'
+    }, {
+      label: 'Category 4',
+      routerLink: 'products'
+    }, {
+      label: 'Category 5',
+      routerLink: 'products'
+    }]
+  }];
 }
