@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import { FilterPipe} from '@shared/pipes/filter.pipe';
 import { ProductsListComponent } from './products-list.component';
-import { ProductListItemComponent } from '../product-list-item/product-list-item.component';
+import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 
 @NgModule({
   declarations: [

@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from '@shared/header/header.module';
 import { ProductsListModule } from './products-list/products-list.module';
 import {MainModule} from "./main/main.module";
+import {AngularFireModule} from "@angular/fire";
+import {AngularFireDatabaseModule} from "@angular/fire/database";
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import {MainModule} from "./main/main.module";
     HeaderModule,
     ProductsListModule,
     BrowserAnimationsModule,
-    MainModule
+    MainModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
