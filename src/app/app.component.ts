@@ -1,39 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { MenuItemsService } from '@shared/services/menu-items.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   activeView = 'main';
-  headerItems = [{
-    label: 'Main',
-    alias: 'main',
-    subItems: []
-  }, {
-    label: 'Products',
-    alias: 'products',
-    subItems: [{
-      label: 'All Categories',
-      alias: 'products'
-    }, {
-      label: 'BMW',
-      alias: 'products'
-    }, {
-      label: 'Mercedes',
-      alias: 'products'
-    }, {
-      label: 'Zhyguli',
-      alias: 'products'
-    }, {
-      label: 'Audi',
-      alias: 'products'
-    }, {
-      label: 'Toyota',
-      alias: 'products'
-    }]
-  }];
+  headerItems: { label: string; alias: string; subItems: any[] }[] = [];
+
+  constructor(private menuItemsService: MenuItemsService) { }
+
+  ngOnInit(): void {
+    this.menuItemsService.getMenuItems().subscribe(data => {
+      this.headerItems = data;
+    });
+  }
 
   changeView(view): void {
     this.activeView = view;
