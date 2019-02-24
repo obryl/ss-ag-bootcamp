@@ -23,6 +23,15 @@ export class ProductsService {
       }));
   }
 
+  getProduct(id: string): Observable<productItemModel> {
+    return this.firestore.doc('products/' + id).get().pipe(map(data => {
+      return {
+        id: data.id,
+        ...data.data()
+      } as any;
+    }));
+  }
+
   deleteProduct(id: string): Promise<void> {
     return this.firestore.doc('products/' + id).delete();
   }
