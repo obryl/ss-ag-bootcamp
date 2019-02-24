@@ -1,27 +1,27 @@
 [{
   "label": "Main",
-  "alias": "main",
+  "alias": "",
   "subItems": []
 }, {
   "label": "Products",
   "alias": "products",
   "subItems": [{
     "label": "All Categories",
-    "alias": "products"
+    "alias": "products/all"
   }, {
     "label": "BMW",
-    "alias": "products"
+    "alias": "products/bmw"
   }, {
     "label": "Mercedes",
-    "alias": "products"
+    "alias": "products/mercedes"
   }, {
     "label": "Zhyguli",
-    "alias": "products"
+    "alias": "products/zhyguli"
   }, {
     "label": "Audi",
-    "alias": "products"
+    "alias": "products/audi"
   }, {
     "label": "Toyota",
-    "alias": "products"
+    "alias": "products/toyota"
   }]
 }]

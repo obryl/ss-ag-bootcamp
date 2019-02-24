@@ -7,8 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from '@shared/header/header.module';
 import { MenuItemsService } from '@shared/services/menu-items.service';
-import { ProductsListModule } from './products-list/products-list.module';
-import { MainModule } from "./main/main.module";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { environment } from "../environments/environment";
@@ -22,9 +20,7 @@ import { environment } from "../environments/environment";
     HttpClientModule,
     AppRoutingModule,
     HeaderModule,
-    ProductsListModule,
     BrowserAnimationsModule,
-    MainModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
   ],
