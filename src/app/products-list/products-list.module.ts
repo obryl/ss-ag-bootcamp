@@ -7,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FilterPipe} from '@shared/pipes/filter.pipe';
 import { ProductsListComponent } from './products-list.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { ProductsService } from './services/products.service';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,15 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
     CommonModule,
     FlexLayoutModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    AngularFirestoreModule
   ],
   exports: [
     ProductsListComponent
+  ],
+  providers: [
+    ProductsService,
+    { provide: FirestoreSettingsToken, useValue: {} }
   ]
 })
 export class ProductsListModule { }
