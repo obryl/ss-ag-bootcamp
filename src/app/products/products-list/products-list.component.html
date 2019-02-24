@@ -7,7 +7,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="flex-start center">
   <div fxFlex="0 1 33.3%" fxLayout="column" fxLayoutAlign="center center"
        *ngFor="let product of products | filter : searchQuery : 'name'; trackBy: id"
-       [ngClass]="{ 'hidden': product.isHidden }">
+       [ngClass]="{ 'hidden': product.isHidden }" [routerLink]="['/products', 'all', product.id]">
     <boot-product-list-item [product]="product"></boot-product-list-item>
   </div>
 </div>
