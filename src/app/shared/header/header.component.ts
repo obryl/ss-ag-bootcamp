@@ -1,11 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'boot-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() menuItems: any[];
   @Output() viewChanged: EventEmitter<string> = new EventEmitter<string>();
 
@@ -13,10 +13,6 @@ export class HeaderComponent implements OnInit {
   dropdownItems: any[] = [];
 
   constructor() { }
-
-  ngOnInit() {
-    this.activeView = this.menuItems[0].alias;
-  }
 
   selectItem(item): void {
     if (item.subItems && item.subItems.length) {
