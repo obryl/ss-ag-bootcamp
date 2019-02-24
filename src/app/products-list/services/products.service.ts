@@ -22,4 +22,8 @@ export class ProductsService {
         }) as any[];
       }));
   }
+
+  deleteProduct(id: string): Promise<void> {
+    return this.firestore.doc('products/' + id).delete();
+  }
 }
