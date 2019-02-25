@@ -8,8 +8,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatProgressSpinnerModule
-} from "@angular/material";
-import {FormsModule} from "@angular/forms";
+} from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AuthComponent],
