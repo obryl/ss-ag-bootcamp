@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { productItemModel } from '../models/product-list.model';
-import {ProductsService} from "../services/products.service";
+import { ProductsService } from '../services/products.service';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'boot-product-list-item',
@@ -10,10 +11,15 @@ import {ProductsService} from "../services/products.service";
 export class ProductListItemComponent implements OnInit {
   @Input()
   product: productItemModel;
+  isDeleteVisible: boolean;
 
-  constructor(private productsService: ProductsService) { }
+  constructor(
+    private productsService: ProductsService,
+    private authService: AuthService,
+  ) { }
 
   ngOnInit() {
+    this.isDeleteVisible = this.authService.isAdmin();
   }
 
   deleteItem(item): void {

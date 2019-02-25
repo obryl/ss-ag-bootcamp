@@ -7,10 +7,14 @@ const routes: Routes = [
     loadChildren: './products-list/products-list.module#ProductsListModule'
   },
   {
+    path: 'auth',
+    loadChildren: './auth/auth.module#AuthModule'
+  },
+  {
     path: '',
     loadChildren: './main/main.module#MainModule'
   },
-  { path: '**', redirectTo: '' }
+  { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
 @NgModule({
