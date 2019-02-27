@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   @Input() menuItems: any[];
+  @Input() isLoggedIn: boolean;
 
   dropdownItems: any[] = [];
 
@@ -21,4 +22,7 @@ export class HeaderComponent {
     this.router.navigate([item.alias]);
   }
 
+  goToAuth(): void {
+    this.router.navigate(['auth']);
+  }
 }

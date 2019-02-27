@@ -21,6 +21,7 @@ export class AuthComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.authService.logout();
   }
 
   login(): void {

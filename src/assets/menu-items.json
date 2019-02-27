@@ -24,4 +24,8 @@
     "label": "Toyota",
     "alias": "products/toyota"
   }]
+}, {
+  "label": "Log Out",
+  "alias": "auth",
+  "subItems": []
 }]

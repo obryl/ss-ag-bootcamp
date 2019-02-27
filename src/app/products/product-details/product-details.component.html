@@ -1,3 +1,16 @@
-<div fxLayout="row wrap" fxLayoutAlign="center center">
-  <h1>{{ product?.name }}</h1>
+<div fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="product">
+  <mat-card class="product-card">
+    <mat-card-header>
+      <mat-card-title>{{ product.category }} {{ product.name }}</mat-card-title>
+      <mat-card-subtitle>Price: {{ product.price | currency }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="product-card-img">
+      <img mat-card-image [src]="product.imgUrl" alt="product.name">
+    </div>
+    <mat-card-content>
+      <p>
+        {{ product.description }}
+      </p>
+    </mat-card-content>
+  </mat-card>
 </div>

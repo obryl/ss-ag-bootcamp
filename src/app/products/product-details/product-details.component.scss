@@ -1,0 +1,17 @@
+.product-card {
+    margin: 40px auto;
+    max-width: 600px;
+
+    .product-card-img {
+      height: auto;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      margin: 0 -16px 16px;
+      img {
+        margin-top: 0;
+        align-self: center;
+      }
+    }
+  }
+  

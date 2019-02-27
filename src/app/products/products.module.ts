@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule, MatInputModule, MatCardModule } from '@angular/material';
 
 import { FilterPipe} from '@shared/pipes/filter.pipe';
 import { ProductsRoutingModule } from './products-routing.module';
@@ -25,7 +25,9 @@ import { ProductsService } from './services/products.service';
     CommonModule,
     FlexLayoutModule,
     FormsModule,
+    MatButtonModule,
     MatInputModule,
+    MatCardModule,
     AngularFirestoreModule,
     ProductsRoutingModule
   ],

@@ -7,6 +7,6 @@ export class MenuItemsService {
   constructor(private http: HttpClient) {}
 
   public getMenuItems(): Observable<any> {
-    return this.http.get("./assets/menu-items.json")
+    return this.http.get('./assets/menu-items.json')
   }
 }

@@ -40,7 +40,12 @@ export class AuthService {
         }
         return response;
       })
-    )
+    );
+  }
+
+  logout(): any {
+    sessionStorage.removeItem('user');
+    this.setIsLoggedIn(false);
   }
 
   private setIsLoggedIn(loggedIn: boolean): void {

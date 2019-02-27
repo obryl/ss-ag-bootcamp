@@ -7,7 +7,8 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatListModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
   ]
 })
 export class AuthModule { }
