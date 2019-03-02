@@ -32,6 +32,14 @@ export class ProductsService {
     }));
   }
 
+  createProduct(product: productItemModel): Promise<any> {
+    return this.firestore.collection('products').add(product);
+  }
+
+  updateProduct(product: productItemModel): Promise<void> {
+    return this.firestore.doc(`products/${product.id}`).update(product);
+  }
+
   deleteProduct(id: string): Promise<void> {
     return this.firestore.doc('products/' + id).delete();
   }
