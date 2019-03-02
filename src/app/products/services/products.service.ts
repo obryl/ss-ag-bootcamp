@@ -32,7 +32,7 @@ export class ProductsService {
     }));
   }
 
-  deleteProduct(id: string): Promise<void> {
+  deleteProduct(id: number): Promise<void> {
     return this.firestore.doc('products/' + id).delete();
   }
 }

@@ -22,7 +22,7 @@ export class ProductListItemComponent implements OnInit {
     this.isDeleteVisible = this.authService.isAdmin();
   }
 
-  deleteItem(item): void {
+  deleteItem(item: productItemModel): void {
     this.productsService.deleteProduct(item.id).then(() => {
       // handle result ... show message
     });
