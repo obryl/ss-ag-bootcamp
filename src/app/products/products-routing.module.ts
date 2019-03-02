@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductDetailsResolver } from './resolvers/prudct-details.resolver';
 
 const routes: Routes = [
   {
@@ -14,7 +15,10 @@ const routes: Routes = [
       component: ProductsListComponent
     }, {
       path: ':categoryId/:productId',
-      component: ProductDetailsComponent
+      component: ProductDetailsComponent,
+      resolve: {
+        detailsData: ProductDetailsResolver
+      }
     },
     {
       path: '',
@@ -29,6 +33,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes)
   ],
+  providers: [ ProductDetailsResolver ],
   exports: [RouterModule]
 })
 export class ProductsRoutingModule { }

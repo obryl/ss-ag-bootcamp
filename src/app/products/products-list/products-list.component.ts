@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { productItemModel } from '../models/product-list.model';
-import { ProductsService } from "../services/products.service";
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'boot-products-list',
