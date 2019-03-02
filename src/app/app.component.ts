@@ -4,6 +4,7 @@ import { MenuItemsService } from '@shared/services/menu-items.service';
 import { AuthService } from './auth/services/auth.service';
 
 import { Subscription } from 'rxjs';
+import {SpinnerService} from "./core/services/spinner.service";
 
 @Component({
   selector: 'app-root',
@@ -14,18 +15,23 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   headerItems: { label: string; alias: string; subItems: any[] }[] = [];
   userInfo: any;
   isLoggedIn = false;
+  showSpinner = false;
 
   private isLoggedIn$: Subscription;
 
   constructor(
     private menuItemsService: MenuItemsService,
-    private authService: AuthService
+    private authService: AuthService,
+    private spinnerService: SpinnerService
   ) { }
 
   ngOnInit(): void {
     this.menuItemsService.getMenuItems().subscribe(data => {
       this.headerItems = data;
     });
+    this.spinnerService.showSpinner.subscribe((value) => {
+      this.showSpinner = value;
+    })
   }
 
   ngAfterViewInit(): void {
