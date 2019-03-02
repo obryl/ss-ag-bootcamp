@@ -22,7 +22,7 @@ const routes: Routes = [
     },
     {
       path: '',
-      redirectTo: 'products/all'
+      redirectTo: 'all'
     }]
   },
   { path: '**', redirectTo: '' }
