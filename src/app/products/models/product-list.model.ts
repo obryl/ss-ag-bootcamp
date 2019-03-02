@@ -1,6 +1,6 @@
 export class productItemModel {
   name: string;
-  id: number;
+  id: string;
   price: number;
   category?: string;
   description?: string;
