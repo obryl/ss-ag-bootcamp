@@ -12,6 +12,6 @@
     </p>
   </mat-card-content>
   <mat-card-actions *ngIf="isDeleteVisible">
-    <button mat-button (click)="deleteItem(product)">Delete</button>
+    <button mat-button (click)="deleteItem($event, product)">Delete</button>
   </mat-card-actions>
 </mat-card>

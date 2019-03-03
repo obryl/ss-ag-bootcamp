@@ -1,7 +1,18 @@
 .hidden {
 	display: none !important;
+
+	.isAdmin & {
+		display: flex !important;
+	}
 }
 
 .products-wrapper {
 	padding: 20px;
+}
+
+.add-product {
+	cursor: pointer;
+	.mat-icon {
+		font-size: 90px;
+	}
 }

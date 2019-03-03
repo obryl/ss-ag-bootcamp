@@ -1,5 +1,5 @@
-<div fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="product">
-  <mat-card class="product-card">
+<div fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="product" class="product-card">
+  <mat-card *ngIf="!isEditMode">
     <mat-card-header>
       <mat-card-title>{{ product.category }} {{ product.name }}</mat-card-title>
       <mat-card-subtitle>Price: {{ product.price | currency }}</mat-card-subtitle>
@@ -13,8 +13,13 @@
       </p>
     </mat-card-content>
     <mat-card-actions *ngIf="isActionsVisible">
-      <button mat-button>Edit</button>
+      <button mat-button (click)="editModeOn()">Edit</button>
       <button mat-button (click)="deleteItem()">Delete</button>
     </mat-card-actions>
   </mat-card>
+  <div *ngIf="isEditMode">
+    <boot-product-form [product]="product"></boot-product-form>
+    <button mat-button (click)="cancelEdit()">Cancel</button>
+    <button mat-button (click)="updateProduct()">Save</button>
+  </div>
 </div>

@@ -4,7 +4,7 @@ import { MenuItemsService } from '@shared/services/menu-items.service';
 import { AuthService } from './auth/services/auth.service';
 
 import { Subscription } from 'rxjs';
-import {SpinnerService} from "./core/services/spinner.service";
+import { SpinnerService } from './core/services/spinner.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ import {SpinnerService} from "./core/services/spinner.service";
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   headerItems: { label: string; alias: string; subItems: any[] }[] = [];
   userInfo: any;
-  isLoggedIn = false;
+  isLoggedIn = true;
   showSpinner = false;
 
   private isLoggedIn$: Subscription;
@@ -26,24 +26,21 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.authService.initUser();
     this.menuItemsService.getMenuItems().subscribe(data => {
       this.headerItems = data;
     });
     this.spinnerService.showSpinner.subscribe((value) => {
       this.showSpinner = value;
-    })
+    });
   }
 
   ngAfterViewInit(): void {
-    this.authService.initUser();
     this.authService.isLoggedIn.subscribe((isLoggedIn) => {
       if (isLoggedIn) {
         this.userInfo = this.authService.getUser();
       }
-      // life hack to avoid ExpressionChangedAfterItHasBeenCheckedError
-      setTimeout(() => {
-        this.isLoggedIn = isLoggedIn;
-      });
+      this.isLoggedIn = isLoggedIn;
     });
   }
 

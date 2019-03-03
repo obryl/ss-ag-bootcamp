@@ -13,6 +13,7 @@ import { ProductsService } from '../services/products.service';
 export class ProductDetailsComponent implements OnInit {
   product: productItemModel;
   isActionsVisible: boolean;
+  isEditMode = false;
 
   constructor(
     private authService: AuthService,
@@ -32,5 +33,19 @@ export class ProductDetailsComponent implements OnInit {
     this.productsService.deleteProduct(this.product.id).then(() => {
       this.router.navigate(['/products', 'all']);
     });
+  }
+
+  updateProduct(): void {
+    this.productsService.updateProduct(this.product).then(() => {
+      this.isEditMode = false;
+    });
+  }
+
+  editModeOn(): void {
+    this.isEditMode = true;
+  }
+
+  cancelEdit(): void {
+    this.isEditMode = false;
   }
 }

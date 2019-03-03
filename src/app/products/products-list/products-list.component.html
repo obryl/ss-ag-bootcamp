@@ -5,7 +5,10 @@
       <input matInput type="text" [(ngModel)]="searchQuery">
     </mat-form-field>
   </div>
-  <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="flex-start center">
+  <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="flex-start center" [ngClass]="{ 'isAdmin': isAdmin }">
+    <div fxFlex="0 1 calc(33.3% - 20px)" fxLayout="column" fxLayoutAlign="center center" (click)="openAddNewProduct()" class="add-product">
+      <mat-icon>add_box</mat-icon>
+    </div>
     <div fxFlex="0 1 calc(33.3% - 20px)" fxLayout="column" fxLayoutAlign="center center"
          *ngFor="let product of products | filter : searchQuery : 'name'; trackBy: id"
          [ngClass]="{ 'hidden': product.isHidden }" [routerLink]="['/products', 'all', product.id]">

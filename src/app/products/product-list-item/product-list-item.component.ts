@@ -22,7 +22,8 @@ export class ProductListItemComponent implements OnInit {
     this.isDeleteVisible = this.authService.isAdmin();
   }
 
-  deleteItem(item: productItemModel): void {
+  deleteItem(ev, item: productItemModel): void {
+    ev.stopPropagation();
     this.productsService.deleteProduct(item.id).then(() => {
       // handle result ... show message
     });
